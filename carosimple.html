@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VHTM</title>
+</head>
+<button id="Caro" onclick="Trade()">Change Value</button><br>
+<p id="Carogame"></p>
+<body>
+<script>
+    let Line = [];
+    let b = document.getElementById("Carogame");
+    let data="";
+   for(let i=0;i<5;i++){
+       Line[i]=[];
+       for(let j=0;j<5;j++){
+           Line[i][j]= 0 ;
+       }
+   }
+   function Hienthi() {
+       data = "";
+       for (let i = 0; i < 5; i++) {
+           for (let j = 0; j < 5; j++) {
+               data += Line[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;"
+           }
+           data += "<br>"
+       }
+       b.innerHTML = data;
+   }
+   Hienthi();
+    function Trade() {
+        let x = prompt("Tọa độ x : " ) - 1;
+        let y = prompt("Tọa độ y : " ) - 1;
+        Line[x][y]= "x";
+        Hienthi()
+    }
+</script>
+</body>
+</html>
